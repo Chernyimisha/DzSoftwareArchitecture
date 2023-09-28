@@ -1,0 +1,66 @@
+@startuml
+class OOP_seminars.terrarium.Terrarium {
+- List<Animal> terrarium
++ Terrarium addAnimal(Animal)
++ String toString()
+- List<SpeedSwimming> getSwimmers()
++ SpeedSwimming getFastestSwimmer()
+- List<Soundable> getSoundable()
++ String getSounds()
+}
+abstract class OOP_seminars.terrarium.amphibians.Amphibians {
++ String toString()
+}
+class OOP_seminars.terrarium.reptiles.Crocodiles {
++ String feed()
++ int getSwimSpeed()
++ String toString()
++ String getSound()
+}
+class OOP_seminars.terrarium.invertebrates.Birdman {
++ String feed()
++ String toString()
++ String getSound()
++ int getSwimSpeed()
+}
+class OOP_seminars.terrarium.main {
++ {static} void main(String[])
+}
+interface OOP_seminars.terrarium.interfaces.SpeedSwimming {
+~ int getSwimSpeed()
+}
+abstract class OOP_seminars.terrarium.reptiles.Reptiles {
++ String toString()
+}
+abstract class OOP_seminars.terrarium.Animal {
++ String name
++ {abstract}String feed()
++ String toString()
+}
+interface OOP_seminars.terrarium.interfaces.Soundable {
+~ String getSound()
+}
+abstract class OOP_seminars.terrarium.invertebrates.Invertebrates {
++ String toString()
+}
+class OOP_seminars.terrarium.amphibians.Frog {
++ String feed()
++ int getSwimSpeed()
++ String toString()
++ String getSound()
+}
+
+
+OOP_seminars.terrarium.Animal <|-- OOP_seminars.terrarium.amphibians.Amphibians
+OOP_seminars.terrarium.interfaces.SpeedSwimming <|.. OOP_seminars.terrarium.reptiles.Crocodiles
+OOP_seminars.terrarium.interfaces.Soundable <|.. OOP_seminars.terrarium.reptiles.Crocodiles
+OOP_seminars.terrarium.reptiles.Reptiles <|-- OOP_seminars.terrarium.reptiles.Crocodiles
+OOP_seminars.terrarium.interfaces.SpeedSwimming <|.. OOP_seminars.terrarium.invertebrates.Birdman
+OOP_seminars.terrarium.interfaces.Soundable <|.. OOP_seminars.terrarium.invertebrates.Birdman
+OOP_seminars.terrarium.invertebrates.Invertebrates <|-- OOP_seminars.terrarium.invertebrates.Birdman
+OOP_seminars.terrarium.Animal <|-- OOP_seminars.terrarium.reptiles.Reptiles
+OOP_seminars.terrarium.Animal <|-- OOP_seminars.terrarium.invertebrates.Invertebrates
+OOP_seminars.terrarium.interfaces.SpeedSwimming <|.. OOP_seminars.terrarium.amphibians.Frog
+OOP_seminars.terrarium.interfaces.Soundable <|.. OOP_seminars.terrarium.amphibians.Frog
+OOP_seminars.terrarium.amphibians.Amphibians <|-- OOP_seminars.terrarium.amphibians.Frog
+@enduml
