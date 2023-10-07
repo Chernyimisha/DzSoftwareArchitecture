@@ -1,4 +1,4 @@
-package DZ_architecture.DZ_2.factory_pattern;
+package DZ2.factory_pattern;
 
 abstract class Vehicle
 {

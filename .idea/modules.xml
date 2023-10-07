@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DZ_software_architecture.iml" filepath="$PROJECT_DIR$/DZ_software_architecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DZsoftwarearchitecture.iml" filepath="$PROJECT_DIR$/DZsoftwarearchitecture.iml" />
     </modules>
   </component>
 </project>
