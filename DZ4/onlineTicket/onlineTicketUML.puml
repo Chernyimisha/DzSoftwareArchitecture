@@ -1,0 +1,81 @@
+@startuml
+
+'интерфейсы
+interface UserActions {
++authorize(username: String, password: String): boolean
++selectRoute(routeId: String, time: DateTime): boolean
++checkTicketAvailability(): boolean
++checkFunds(): boolean
+}
+
+UserActions <|.. User: implements
+
+interface TicketActions {
++reserveTicket(): boolean
++deductFunds(): boolean
++confirmPurchase(): boolean
++updateTicketAvailability(): void
++cancelReservation(): boolean
+}
+
+TicketActions <|.. User: implements
+
+' Классы и операции
+
+class User {
+
+'предусловия
++authorize(username: String, password: String): boolean
++selectRoute(routeId: String, time: DateTime): boolean
++checkTicketAvailability(): boolean
++checkFunds(): boolean
+
+'постусловия
++reserveTicket(): boolean
++deductFunds(): boolean
++confirmPurchase(): boolean
++updateTicketAvailability(): void
++cancelReservation(): boolean
+}
+
+User ..> BusTicket : uses
+
+abstract class Ticket {
++routeId: String
++departureTime: DateTime
++price: Money
+}
+
+
+class BusTicket {
++num: int
++routeId: String
++departureTime: DateTime
++price: Money
+}
+
+BusTicket --|> Ticket: extends
+
+
+' Предусловия
+
+User --> User : authorize(username, password)
+User --> User : selectRoute(routeId, time)
+User --> User : checkTicketAvailability()
+User --> User : checkFunds()
+User --> BusTicket : reserveTicket()
+
+' Постусловия
+
+User --> User : deductFunds()
+User --> User : confirmPurchase()
+User --> BusTicket : updateTicketAvailability()
+User --> User : cancelReservation()
+
+' Инварианты
+
+User --> User : [invariant] Funds >= BusTicket.price
+BusTicket --> BusTicket : [invariant] Price > 0
+Ticket --> Ticket : [invariant] Price > 0
+
+@enduml
