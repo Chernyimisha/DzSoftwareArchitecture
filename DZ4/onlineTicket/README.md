@@ -61,6 +61,10 @@ Main (класс)
 
 ## 9. ОПРЕДЕЛИТЬ АЛГОРИТМ ВЗАИМОДЕЙСТВИЯ ГРУППЫ 1 И ГРУППЫ 2 - РАЗРАБОТАТЬ КОНТРАКТ.
 
+User --> BusTicket : reserveTicket();
+User --> BusTicket : confirmPurchase();
+User --> BusTicket : updateTicketAvailability();
+User --> BusTicket : cancelReservation().
 
 ## 10. ПОСЧИТАТЬ МЕТРИКИ АБСТРАКТНОСТИ КОМПОНЕНТ.
 
@@ -68,6 +72,15 @@ Main (класс)
 Это означает, что 50% компонентов в проекте являются абстрактными.
 
 ## 11. ПРИСВОИТЬ КОМПОНЕНТАМ ВЕРСИЮ ПО ПРИНЦИПУ SemVer.
+
+Версии компонентов:
+
+UserActions (интерфейс), version 1.1.1 
+TicketActions (интерфейс), version 1.1.1
+User (класс), version 1.1.1
+Ticket (абстрактный класс), version 1.0.0
+BusTicket (класс), version 1.1.1
+Main (класс), version 1.1.0
 
 
 

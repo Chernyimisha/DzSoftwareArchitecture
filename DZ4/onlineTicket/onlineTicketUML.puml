@@ -2,28 +2,46 @@
 
 'интерфейсы
 interface UserActions {
+// Этот компонент определяет контракты для действий пользователя.
+
 +authorize(username: String, password: String): boolean
 +selectRoute(routeId: String, time: DateTime): boolean
 +checkTicketAvailability(): boolean
 +checkFunds(): boolean
++reserveTicket(): boolean
++deductFunds(): boolean
 }
 
 UserActions <|.. User: implements
 
 interface TicketActions {
-+reserveTicket(): boolean
-+deductFunds(): boolean
+//Этот компонент определяет контракты для операций с билетами.
+
 +confirmPurchase(): boolean
 +updateTicketAvailability(): void
 +cancelReservation(): boolean
 }
 
-TicketActions <|.. User: implements
+TicketActions <|.. Ticket: implements
 
 ' Классы и операции
 
-class User {
+class Main{
+//Класс, вызывающий программу на исполнение. Создает
+//экземпляр пользователя, имитирует его активность
+//и выводит на печать результат бронирования.
 
++ {static} void main(String[])
+}
+
+Main ..> User : uses
+
+class User {
+//Этот компонент описывает класс User, имплементирующий интерфейс
+//UserAction и содержит методы, определяющие активность пользователя
+//при бронировании билетов.
+
+-double funds;
 'предусловия
 +authorize(username: String, password: String): boolean
 +selectRoute(routeId: String, time: DateTime): boolean
@@ -33,14 +51,14 @@ class User {
 'постусловия
 +reserveTicket(): boolean
 +deductFunds(): boolean
-+confirmPurchase(): boolean
-+updateTicketAvailability(): void
-+cancelReservation(): boolean
 }
 
 User ..> BusTicket : uses
 
 abstract class Ticket {
+//Этот компонент описывает абстрактный класс Ticket, имплементирующий интерфейс
+//TicketAction и содержит поля: номер маршрута, время отправления, цена.
+
 +routeId: String
 +departureTime: DateTime
 +price: Money
@@ -48,10 +66,21 @@ abstract class Ticket {
 
 
 class BusTicket {
-+num: int
-+routeId: String
-+departureTime: DateTime
-+price: Money
+//Этот компонент описывает класс BusTicket,
+//наследующий свойства компонента Ticket
+//и содержит поля: номер билета, номер маршрута,
+//время отправления, цена. Также класс BusTicket
+//реализует методы интерфейса TicketAction.
+
+~number: int
+~routeId: String
+~departureTime: DateTime
+~price: Money
+
+'постусловия
++confirmPurchase(): boolean
++updateTicketAvailability(): void
++cancelReservation(): boolean
 }
 
 BusTicket --|> Ticket: extends
@@ -68,9 +97,9 @@ User --> BusTicket : reserveTicket()
 ' Постусловия
 
 User --> User : deductFunds()
-User --> User : confirmPurchase()
+User --> BusTicket : confirmPurchase()
 User --> BusTicket : updateTicketAvailability()
-User --> User : cancelReservation()
+User --> BusTicket : cancelReservation()
 
 ' Инварианты
 

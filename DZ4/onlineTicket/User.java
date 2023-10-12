@@ -1,11 +1,30 @@
-package architecture_seminars.onlineTicket;
+package DZ4.onlineTicket;
 
 import java.util.Date;
 
-// Класс, представляющий пользователя системы.
-class User implements UserActions, TicketActions {
+/**
+ * Компонент: User
+ * Версия: 1.1.1
+ *
+ * Описание: Этот компонент описывает класс User, имплементирующий интерфейс
+ * UserAction и содержит методы, определяющие активность пользователя при бронировании билетов.
+ *
+ * Изменения:
+ * - 1.0.0: Первая версия.
+ * - 1.1.0: Добавлена поддержка новой функциональности.
+ * - 1.1.1: Добавлены комментарии к методам.
+ */
 
-    private boolean founds;
+class User implements UserActions {
+
+    /**
+     * Атрибут класса User, содержащий в себе информацию о наличии у пользователя средств.
+     * <p>
+     * Этот атрибут содержит информацию о сумме средств у пользователя перед приобретением билета.
+     * <p>
+     * Параметр funds возвращает значение в формате double.
+     */
+    private double funds;
 
     /**
      * Авторизация пользователя.
@@ -25,38 +44,6 @@ class User implements UserActions, TicketActions {
     public boolean authorize(String username, String password) {
         // Реализация метода
         return false;
-    }
-
-    /**
-     * Выбор маршрута.
-     *
-     * @pre User должен выполнить выбрать маршрут.
-     * @post Подтверждение.
-     * @return true, если маршрут выбран, false в противном случае.
-     * <p>
-     * Этот метод позволяет подтвердить выбор маршрута пользователем.
-     * Для успешной авторизации пользователя необходимо выполнение следующих условий:
-     * - Пользователь должен выбрать маршрут.
-     * <p>
-     * Если все предусловия выполняются, выбор маршрута будет подтвержден, и метод вернет true.
-     * В противном случае метод вернет false.
-     */
-    @Override
-    public boolean selectRoute(String routeId, Date time) {
-        // Реализация метода
-        return false;
-    }
-
-    @Override
-    public boolean checkTicketAvailability() {
-        // Реализация метода
-        return false;
-    }
-
-    @Override
-    public boolean checkFunds() {
-        // Реализация метода
-        return this.founds;
     }
 
     /**
@@ -108,15 +95,65 @@ class User implements UserActions, TicketActions {
         }
     }
 
-    private boolean performReservation() {
+    /**
+     * Выбор маршрута.
+     *
+     * @return true, если маршрут выбран, false в противном случае.
+     * <p>
+     * Этот метод позволяет подтвердить выбор маршрута пользователем.
+     * Для успешной авторизации пользователя необходимо выполнение следующих условий:
+     * - Пользователь должен выбрать маршрут.
+     * <p>
+     * Если все предусловия выполняются, выбор маршрута будет подтвержден, и метод вернет true.
+     * В противном случае метод вернет false.
+     */
+    @Override
+    public boolean selectRoute(String routeId, Date time) {
+        // Реализация метода
         return false;
     }
 
-    private boolean isRouteSelected() {
+    /**
+     * Проверка наличия билетов.
+     *
+     * @return true, если количество билетов > 0, false - если количество билетов = 0.
+     * <p>
+     * Этот метод позволяет подтвердить наличие билетов перед бронированием.
+     * <p>
+     * Если количество билетов > 0, то метод вернет true.
+     * Если количество билетов = 0, то метод вернет false.
+     */
+    @Override
+    public boolean checkTicketAvailability() {
+        // Реализация метода
         return false;
     }
 
-    private boolean isAuthorized() {
+    /**
+     * Проверка наличия средств.
+     *
+     * @return true, если сумма средств у пользователя >= цены билета, false - если сумма средств < цены билета.
+     * <p>
+     * Этот метод позволяет подтвердить достаточность средств перед бронированием.
+     * <p>
+     * Если сумма средств у пользователя >= цены билета, то метод вернет true.
+     * Если сумма средств < цены билета, то метод вернет false.
+     */
+    @Override
+    public boolean checkFunds() {
+        // Реализация метода
+        return false;
+    }
+
+    public boolean performReservation() {
+        return false;
+    }
+
+    public boolean isRouteSelected() {
+        return false;
+    }
+
+    public boolean isAuthorized() {
         return false;
     }
 
@@ -140,35 +177,5 @@ class User implements UserActions, TicketActions {
         return false;
     }
 
-    /**
-     * Подтверждение покупки билета.
-     *
-     * @return true, если списание средств успешно, false в противном случае.
-     * @pre User Успешное списание средств.
-     * @post Покупка подтверждена.
-     * <p>
-     * Этот метод позволяет подтвердить факт покупки билета пользователем.
-     * Для успешного подтверждения покупки билета необходимо выполнение следующих условий:
-     * - У пользователя должно успешным списание средств.
-     * <p>
-     * Если все предусловия выполняются, то покупка билета будет подтверждена и метод вернет true.
-     * В противном случае покупка билета не будет подтверждена, и метод вернет false.
-     */
 
-    @Override
-    public boolean confirmPurchase() {
-        // Реализация метода
-        return false;
-    }
-
-    @Override
-    public void updateTicketAvailability() {
-        // Реализация метода
-    }
-
-    @Override
-    public boolean cancelReservation() {
-        // Реализация метода
-        return false;
-    }
 }
