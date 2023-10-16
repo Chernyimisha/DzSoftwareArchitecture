@@ -123,6 +123,6 @@ DZ5.accountingUser.view.Command <|-- DZ5.accountingUser.view.UpdateCommand : ext
 DZ5.accountingUser.view.Command <|-- DZ5.accountingUser.view.ReadCommand : extends
 DZ5.accountingUser.view.Command <|-- DZ5.accountingUser.view.DeleteCommand : extends
 DZ5.accountingUser.view.CommandsInt <|.. DZ5.accountingUser.view.Command : implements
-DZ5.accountingUser.model.FileOperation <|.. DZ5.accountingUser.model.FileOperationImpl
+DZ5.accountingUser.model.FileOperation <|.. DZ5.accountingUser.model.FileOperationImpl : implements
 DZ5.accountingUser.view.Command <|-- DZ5.accountingUser.view.ListCommand : extends
 @enduml
