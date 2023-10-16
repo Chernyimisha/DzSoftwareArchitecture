@@ -1,4 +1,4 @@
-package DZ5.accautingUser.controller;
+package DZ5.accautingUser.view;
 
 public enum Commands {
     NONE,

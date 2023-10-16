@@ -1,4 +1,6 @@
-package DZ5.accautingUser.controller;
+package DZ5.accautingUser.view;
+
+import DZ5.accautingUser.controller.UserController;
 
 public abstract class Command implements CommandsInt{
 

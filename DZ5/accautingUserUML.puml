@@ -1,23 +1,26 @@
 @startuml
+class DZ5.accautingUser.view.CreateCommand {
++ void method()
+}
 class DZ5.accautingUser.model.NameAndSurnameValidator {
 - String userInput
 + void validate()
-}
-interface DZ5.accautingUser.controller.CommandsInt {
-~ void method()
 }
 class DZ5.accautingUser.model.FileOperationImpl {
 - String fileName
 + List<String> readAllLines()
 + void saveAllLines(List<String>)
 }
-class DZ5.accautingUser.controller.UpdateCommand {
+interface DZ5.accautingUser.view.CommandsInt {
+~ void method()
+}
+class DZ5.accautingUser.view.ReadCommand {
 + void method()
 }
-class DZ5.accautingUser.controller.DeleteCommand {
-+ void method()
+abstract class DZ5.accautingUser.view.Command {
+~ UserController userController
 }
-enum DZ5.accautingUser.controller.Commands {
+enum DZ5.accautingUser.view.Commands {
 +  NONE
 +  READ
 +  CREATE
@@ -26,7 +29,7 @@ enum DZ5.accautingUser.controller.Commands {
 +  DELETE
 +  EXIT
 }
-class DZ5.accautingUser.controller.ListCommand {
+class DZ5.accautingUser.view.UpdateCommand {
 + void method()
 }
 class DZ5.accautingUser.model.RepositoryFile {
@@ -48,11 +51,8 @@ class DZ5.accautingUser.controller.UserController {
 - User getNewUser()
 + {static} String prompt(String)
 }
-class DZ5.accautingUser.controller.CreateCommand {
+class DZ5.accautingUser.view.DeleteCommand {
 + void method()
-}
-abstract class DZ5.accautingUser.controller.Command {
-~ UserController userController
 }
 interface DZ5.accautingUser.model.FileOperation {
 ~ List<String> readAllLines()
@@ -87,20 +87,17 @@ class DZ5.accautingUser.model.UserMapper {
 + User mapStringToUser(String)
 + List<String> mapToString(List<User>)
 }
-class DZ5.accautingUser.controller.ReadCommand {
+class DZ5.accautingUser.view.ListCommand {
 + void method()
 }
-class DZ5.accautingUser.view.ViewUser {
-- UserController userController
-}
 
 
+DZ5.accautingUser.view.Command <|-- DZ5.accautingUser.view.CreateCommand
 DZ5.accautingUser.model.FileOperation <|.. DZ5.accautingUser.model.FileOperationImpl
-DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.UpdateCommand
-DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.DeleteCommand
-DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.ListCommand
+DZ5.accautingUser.view.Command <|-- DZ5.accautingUser.view.ReadCommand
+DZ5.accautingUser.view.CommandsInt <|.. DZ5.accautingUser.view.Command
+DZ5.accautingUser.view.Command <|-- DZ5.accautingUser.view.UpdateCommand
 DZ5.accautingUser.model.Repository <|.. DZ5.accautingUser.model.RepositoryFile
-DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.CreateCommand
-DZ5.accautingUser.controller.CommandsInt <|.. DZ5.accautingUser.controller.Command
-DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.ReadCommand
+DZ5.accautingUser.view.Command <|-- DZ5.accautingUser.view.DeleteCommand
+DZ5.accautingUser.view.Command <|-- DZ5.accautingUser.view.ListCommand
 @enduml

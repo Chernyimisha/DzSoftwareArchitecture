@@ -1,4 +1,6 @@
-package DZ5.accautingUser.controller;
+package DZ5.accautingUser.view;
+
+import DZ5.accautingUser.controller.UserController;
 
 public class DeleteCommand extends Command{
     public DeleteCommand(UserController userController) {

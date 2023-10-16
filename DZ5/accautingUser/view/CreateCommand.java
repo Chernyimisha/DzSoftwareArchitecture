@@ -1,6 +1,7 @@
-package DZ5.accautingUser.controller;
+package DZ5.accautingUser.view;
 
-import DZ5.accautingUser.view.ViewUser;
+
+import DZ5.accautingUser.controller.UserController;
 
 public class CreateCommand extends Command {
 
