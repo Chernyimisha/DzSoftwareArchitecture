@@ -1,0 +1,106 @@
+@startuml
+class DZ5.accautingUser.model.NameAndSurnameValidator {
+- String userInput
++ void validate()
+}
+interface DZ5.accautingUser.controller.CommandsInt {
+~ void method()
+}
+class DZ5.accautingUser.model.FileOperationImpl {
+- String fileName
++ List<String> readAllLines()
++ void saveAllLines(List<String>)
+}
+class DZ5.accautingUser.controller.UpdateCommand {
++ void method()
+}
+class DZ5.accautingUser.controller.DeleteCommand {
++ void method()
+}
+enum DZ5.accautingUser.controller.Commands {
++  NONE
++  READ
++  CREATE
++  UPDATE
++  LIST
++  DELETE
++  EXIT
+}
+class DZ5.accautingUser.controller.ListCommand {
++ void method()
+}
+class DZ5.accautingUser.model.RepositoryFile {
+- UserMapper mapper
+- FileOperation fileOperation
++ List<User> getAllUsers()
++ String addUserToBase(User)
++ User updateUser(User)
++ void deleteUser(User)
+}
+class DZ5.accautingUser.controller.UserController {
+- Repository repository
+- User getUser()
++ void createUser()
++ void readUser()
++ void readList()
++ void updateUser()
++ void deleteUser()
+- User getNewUser()
++ {static} String prompt(String)
+}
+class DZ5.accautingUser.controller.CreateCommand {
++ void method()
+}
+abstract class DZ5.accautingUser.controller.Command {
+~ UserController userController
+}
+interface DZ5.accautingUser.model.FileOperation {
+~ List<String> readAllLines()
+~ void saveAllLines(List<String>)
+}
+class DZ5.accautingUser.model.User {
+- String id
+- String name
+- String surname
+- String phone
++ String getId()
++ void setId(String)
++ String getName()
++ void setName(String)
++ String getSurname()
++ void setSurname(String)
++ String getPhone()
++ void setPhone(String)
++ String toString()
+}
+interface DZ5.accautingUser.model.Repository {
+~ List<User> getAllUsers()
+~ String addUserToBase(User)
+~ User updateUser(User)
+~ void deleteUser(User)
+}
+class DZ5.accautingUser.Main {
++ {static} void main(String[])
+}
+class DZ5.accautingUser.model.UserMapper {
++ String mapUserToString(User)
++ User mapStringToUser(String)
++ List<String> mapToString(List<User>)
+}
+class DZ5.accautingUser.controller.ReadCommand {
++ void method()
+}
+class DZ5.accautingUser.view.ViewUser {
+- UserController userController
+}
+
+
+DZ5.accautingUser.model.FileOperation <|.. DZ5.accautingUser.model.FileOperationImpl
+DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.UpdateCommand
+DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.DeleteCommand
+DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.ListCommand
+DZ5.accautingUser.model.Repository <|.. DZ5.accautingUser.model.RepositoryFile
+DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.CreateCommand
+DZ5.accautingUser.controller.CommandsInt <|.. DZ5.accautingUser.controller.Command
+DZ5.accautingUser.controller.Command <|-- DZ5.accautingUser.controller.ReadCommand
+@enduml
