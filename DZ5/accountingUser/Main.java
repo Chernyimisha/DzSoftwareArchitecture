@@ -1,43 +1,44 @@
-package DZ5.accautingUser;
+package DZ5.accountingUser;
 
-import DZ5.accautingUser.controller.UserController;
-import DZ5.accautingUser.model.FileOperation;
-import DZ5.accautingUser.model.FileOperationImpl;
-import DZ5.accautingUser.model.Repository;
-import DZ5.accautingUser.model.RepositoryFile;
-import DZ5.accautingUser.view.*;
+import DZ5.accountingUser.controller.UserController;
+import DZ5.accountingUser.model.FileOperation;
+import DZ5.accountingUser.model.FileOperationImpl;
+import DZ5.accountingUser.model.Repository;
+import DZ5.accountingUser.model.RepositoryFile;
+import DZ5.accountingUser.view.*;
 
 public class Main {
     public static void main(String[] args) {
         FileOperation fileOperation = new FileOperationImpl("users.txt");
         Repository repository = new RepositoryFile(fileOperation);
         UserController controller = new UserController(repository);
-        Command createUserCommand = new CreateCommand(controller);
-        Command readUserCommand = new ReadCommand(controller);
-        Command readListUserCommand = new ListCommand(controller);
-        Command UpdateUserCommand = new UpdateCommand(controller);
-        Command deleteUserCommand = new DeleteCommand(controller);
+
         Commands com;
 
         while (true) {
-            String command = controller.prompt("Введите команду: ");
+            String command = UserController.prompt("Введите команду: ");
             try {
                 com = Commands.valueOf(command.toUpperCase());
                 if (com == Commands.EXIT) return;
                 switch (com) {
                         case CREATE:
+                            Command createUserCommand = new CreateCommand(controller);
                             createUserCommand.method();
                             break;
                         case READ:
+                            Command readUserCommand = new ReadCommand(controller);
                             readUserCommand.method();
                             break;
                         case LIST:
+                            Command readListUserCommand = new ListCommand(controller);
                             readListUserCommand.method();
                             break;
                         case UPDATE:
+                            Command UpdateUserCommand = new UpdateCommand(controller);
                             UpdateUserCommand.method();
                             break;
                         case DELETE:
+                            Command deleteUserCommand = new DeleteCommand(controller);
                             deleteUserCommand.method();
                             break;
                 }
@@ -47,6 +48,3 @@ public class Main {
         }
     }
 }
-//    Сделать удаление из справочника пользователей
-//        * Сделать сохранение в другом формате, например, не через запятую, а через точку с запятой,
-//        и разделителем - пустой строкой. Предусмотреть сохранение в старом формате.

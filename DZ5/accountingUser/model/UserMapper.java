@@ -1,4 +1,4 @@
-package DZ5.accautingUser.model;
+package DZ5.accountingUser.model;
 
 import java.util.ArrayList;
 import java.util.List;

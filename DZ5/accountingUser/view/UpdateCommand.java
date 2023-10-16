@@ -1,6 +1,6 @@
-package DZ5.accautingUser.view;
+package DZ5.accountingUser.view;
 
-import DZ5.accautingUser.controller.UserController;
+import DZ5.accountingUser.controller.UserController;
 
 public class UpdateCommand extends Command{
     public UpdateCommand(UserController userController) {

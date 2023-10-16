@@ -1,0 +1,128 @@
+@startuml
+interface DZ5.accountingUser.view.CommandsInt {
+~ void method()
+}
+class DZ5.accountingUser.model.NameAndSurnameValidator {
+- String userInput
++ void validate()
+}
+enum DZ5.accountingUser.view.Commands {
++  NONE
++  READ
++  CREATE
++  UPDATE
++  LIST
++  DELETE
++  EXIT
+}
+class DZ5.accountingUser.model.User {
+- String id
+- String name
+- String surname
+- String phone
++ String getId()
++ void setId(String)
++ String getName()
++ void setName(String)
++ String getSurname()
++ void setSurname(String)
++ String getPhone()
++ void setPhone(String)
++ String toString()
+}
+class DZ5.accountingUser.model.RepositoryFile {
+- UserMapper mapper
+- FileOperation fileOperation
++ List<User> getAllUsers()
++ String addUserToBase(User)
++ User updateUser(User)
++ void deleteUser(User)
+}
+class DZ5.accountingUser.view.CreateCommand {
++ void method()
+}
+class DZ5.accountingUser.view.UpdateCommand {
++ void method()
+}
+class DZ5.accountingUser.view.ReadCommand {
++ void method()
+}
+class DZ5.accountingUser.view.DeleteCommand {
++ void method()
+}
+class DZ5.accountingUser.controller.UserController {
+- Repository repository
+- User getUser()
++ void createUser()
++ void readUser()
++ void readList()
++ void updateUser()
++ void deleteUser()
+- User getNewUser()
++ {static} String prompt(String)
+}
+class DZ5.accountingUser.Main {
++ {static} void main(String[])
+}
+class DZ5.accountingUser.model.UserMapper {
++ String mapUserToString(User)
++ User mapStringToUser(String)
++ List<String> mapToString(List<User>)
+}
+abstract class DZ5.accountingUser.view.Command {
+~ UserController userController
+}
+class DZ5.accountingUser.model.FileOperationImpl {
+- String fileName
++ List<String> readAllLines()
++ void saveAllLines(List<String>)
+}
+interface DZ5.accountingUser.model.Repository {
+~ List<User> getAllUsers()
+~ String addUserToBase(User)
+~ User updateUser(User)
+~ void deleteUser(User)
+}
+class DZ5.accountingUser.view.ListCommand {
++ void method()
+}
+interface DZ5.accountingUser.model.FileOperation {
+~ List<String> readAllLines()
+~ void saveAllLines(List<String>)
+}
+
+DZ5.accountingUser.controller.UserController --> DZ5.accountingUser.model.NameAndSurnameValidator : association
+DZ5.accountingUser.controller.UserController ..> DZ5.accountingUser.model.User : uses
+DZ5.accountingUser.model.RepositoryFile ..> DZ5.accountingUser.model.User : uses
+
+DZ5.accountingUser.model.RepositoryFile --> DZ5.accountingUser.model.UserMapper : association
+
+DZ5.accountingUser.model.UserMapper ..> DZ5.accountingUser.model.User : uses
+
+
+DZ5.accountingUser.Main ..> DZ5.accountingUser.controller.UserController : uses
+DZ5.accountingUser.Main ..> DZ5.accountingUser.model.FileOperationImpl : uses
+DZ5.accountingUser.Main ..> DZ5.accountingUser.model.RepositoryFile : uses
+
+DZ5.accountingUser.Main ..> DZ5.accountingUser.view.Commands : uses
+DZ5.accountingUser.Main ..> DZ5.accountingUser.view.CreateCommand : uses
+DZ5.accountingUser.Main ..> DZ5.accountingUser.view.UpdateCommand : uses
+DZ5.accountingUser.Main ..> DZ5.accountingUser.view.ReadCommand : uses
+DZ5.accountingUser.Main ..> DZ5.accountingUser.view.DeleteCommand : uses
+DZ5.accountingUser.Main ..> DZ5.accountingUser.view.ListCommand : uses
+
+DZ5.accountingUser.controller.UserController "1" *-- "1" DZ5.accountingUser.model.Repository : contains
+
+DZ5.accountingUser.model.RepositoryFile "1" *-- "1" DZ5.accountingUser.model.FileOperation : contains
+
+
+
+DZ5.accountingUser.model.Repository <|.. DZ5.accountingUser.model.RepositoryFile : implements
+DZ5.accountingUser.view.Command <|-- DZ5.accountingUser.view.CreateCommand : extends
+DZ5.accountingUser.view.Command <|-- DZ5.accountingUser.view.UpdateCommand : extends
+DZ5.accountingUser.view.Command <|-- DZ5.accountingUser.view.ReadCommand : extends
+DZ5.accountingUser.view.Command <|-- DZ5.accountingUser.view.DeleteCommand : extends
+DZ5.accountingUser.view.CommandsInt <|.. DZ5.accountingUser.view.Command : implements
+DZ5.accountingUser.model.FileOperation <|.. DZ5.accountingUser.model.FileOperationImpl
+DZ5.accountingUser.view.Command <|-- DZ5.accountingUser.view.ListCommand : extends
+@enduml

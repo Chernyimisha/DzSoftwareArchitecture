@@ -1,4 +1,4 @@
-package DZ5.accautingUser.model;
+package DZ5.accountingUser.model;
 
 public class User {
     private String id = "";

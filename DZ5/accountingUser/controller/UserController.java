@@ -1,8 +1,8 @@
-package DZ5.accautingUser.controller;
+package DZ5.accountingUser.controller;
 
-import DZ5.accautingUser.model.NameAndSurnameValidator;
-import DZ5.accautingUser.model.Repository;
-import DZ5.accautingUser.model.User;
+import DZ5.accountingUser.model.NameAndSurnameValidator;
+import DZ5.accountingUser.model.Repository;
+import DZ5.accountingUser.model.User;
 
 import java.util.List;
 import java.util.Scanner;
