@@ -1,4 +1,4 @@
-package OOP_seminars.accountingUser.model;
+package DZ3.accountingUser.model;
 
 import java.util.ArrayList;
 import java.util.List;

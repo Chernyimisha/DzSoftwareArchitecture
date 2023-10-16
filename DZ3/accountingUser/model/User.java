@@ -1,4 +1,4 @@
-package OOP_seminars.accountingUser.model;
+package DZ3.accountingUser.model;
 
 public class User {
     private String id = "";

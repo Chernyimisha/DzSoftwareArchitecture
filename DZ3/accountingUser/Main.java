@@ -1,11 +1,11 @@
-package OOP_seminars.accountingUser;
+package DZ3.accountingUser;
 
-import OOP_seminars.accountingUser.controller.UserController;
-import OOP_seminars.accountingUser.model.FileOperation;
-import OOP_seminars.accountingUser.model.FileOperationImpl;
-import OOP_seminars.accountingUser.model.Repository;
-import OOP_seminars.accountingUser.model.RepositoryFile;
-import OOP_seminars.accountingUser.view.ViewUser;
+import DZ3.accountingUser.controller.UserController;
+import DZ3.accountingUser.model.FileOperation;
+import DZ3.accountingUser.model.FileOperationImpl;
+import DZ3.accountingUser.model.Repository;
+import DZ3.accountingUser.model.RepositoryFile;
+import DZ3.accountingUser.view.ViewUser;
 
 public class Main {
     public static void main(String[] args) {

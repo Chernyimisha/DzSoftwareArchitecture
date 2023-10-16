@@ -1,8 +1,8 @@
-package OOP_seminars.accountingUser.view;
+package DZ3.accountingUser.view;
 
 
-import OOP_seminars.accountingUser.controller.Commands;
-import OOP_seminars.accountingUser.controller.UserController;
+import DZ3.accountingUser.controller.Commands;
+import DZ3.accountingUser.controller.UserController;
 
 public class ViewUser {
 

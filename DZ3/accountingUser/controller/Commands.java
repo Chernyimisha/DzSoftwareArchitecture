@@ -1,4 +1,4 @@
-package OOP_seminars.accountingUser.controller;
+package DZ3.accountingUser.controller;
 
 public enum Commands {
     NONE,

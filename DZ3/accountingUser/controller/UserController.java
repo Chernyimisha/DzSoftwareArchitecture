@@ -1,8 +1,8 @@
-package OOP_seminars.accountingUser.controller;
+package DZ3.accountingUser.controller;
 
-import OOP_seminars.accountingUser.model.NameAndSurnameValidator;
-import OOP_seminars.accountingUser.model.Repository;
-import OOP_seminars.accountingUser.model.User;
+import DZ3.accountingUser.model.NameAndSurnameValidator;
+import DZ3.accountingUser.model.Repository;
+import DZ3.accountingUser.model.User;
 
 import java.util.List;
 import java.util.Scanner;
