@@ -1,8 +1,8 @@
-package MVPVM;
+package DZ8.MVPVM;
 
-import MVPVM.presenter.TaskPresenter;
-import MVPVM.view.ConsoleView;
-import MVPVM.view.TaskView;
+import DZ8.MVPVM.presenter.TaskPresenter;
+import DZ8.MVPVM.view.ConsoleView;
+import DZ8.MVPVM.view.TaskView;
 
 
 import java.util.Scanner;

@@ -1,6 +1,6 @@
-package MVI.model;
-import MVI.model.Task;
-import MVI.model.ViewState;
+package DZ8.MVI.model;
+import DZ8.MVI.model.Task;
+import DZ8.MVI.model.ViewState;
 
 import java.util.List;
 

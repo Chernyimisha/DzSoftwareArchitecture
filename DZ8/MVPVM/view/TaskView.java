@@ -1,6 +1,6 @@
-package MVPVM.view;
+package DZ8.MVPVM.view;
 
-import MVPVM.viewModel.TaskViewModel;
+import DZ8.MVPVM.viewModel.TaskViewModel;
 
 import java.util.List;
 

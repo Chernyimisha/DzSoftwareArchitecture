@@ -1,8 +1,8 @@
-package MVPVM.presenter;
+package DZ8.MVPVM.presenter;
 
-import MVPVM.view.TaskView;
-import MVPVM.model.Task;
-import MVPVM.viewModel.TaskViewModel;
+import DZ8.MVPVM.view.TaskView;
+import DZ8.MVPVM.model.Task;
+import DZ8.MVPVM.viewModel.TaskViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

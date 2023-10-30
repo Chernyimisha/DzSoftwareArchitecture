@@ -1,6 +1,6 @@
-package MVVM.viewModel;
+package DZ8.MVVM.viewModel;
 
-import MVVM.model.Book;
+import DZ8.MVVM.model.Book;
 
 import java.util.List;
 

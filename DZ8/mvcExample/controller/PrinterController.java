@@ -1,6 +1,6 @@
-package mvcExample.controller;
+package DZ8.mvcExample.controller;
 
-import mvcExample.model.PrinterUpperCase;
+import DZ8.mvcExample.model.PrinterUpperCase;
 
 public class PrinterController {
     PrinterUpperCase printerUpperCase;

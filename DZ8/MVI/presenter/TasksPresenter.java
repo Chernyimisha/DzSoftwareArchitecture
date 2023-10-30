@@ -1,11 +1,11 @@
-package MVI.presenter;
+package DZ8.MVI.presenter;
 
 
-import MVI.model.Intent;
-import MVI.model.TaskCompletedIntent;
-import MVI.model.Task;
-import MVI.view.BaseView;
-import MVI.model.TasksViewState;
+import DZ8.MVI.model.Intent;
+import DZ8.MVI.model.TaskCompletedIntent;
+import DZ8.MVI.model.Task;
+import DZ8.MVI.view.BaseView;
+import DZ8.MVI.model.TasksViewState;
 
 import java.util.ArrayList;
 import java.util.List;

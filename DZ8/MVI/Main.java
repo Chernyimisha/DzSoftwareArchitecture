@@ -1,9 +1,9 @@
-package MVI;
+package DZ8.MVI;
 
-import MVI.model.TaskCompletedIntent;
-import MVI.presenter.TasksPresenter;
-import MVI.view.BaseView;
-import MVI.view.ConsoleView;
+import DZ8.MVI.model.TaskCompletedIntent;
+import DZ8.MVI.presenter.TasksPresenter;
+import DZ8.MVI.view.BaseView;
+import DZ8.MVI.view.ConsoleView;
 
 import java.util.Scanner;
 

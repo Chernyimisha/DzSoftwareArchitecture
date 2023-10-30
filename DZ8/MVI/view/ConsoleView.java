@@ -1,7 +1,7 @@
-package MVI.view;
+package DZ8.MVI.view;
 
-import MVI.model.TasksViewState;
-import MVI.model.ViewState;
+import DZ8.MVI.model.TasksViewState;
+import DZ8.MVI.model.ViewState;
 
 public class ConsoleView implements BaseView {
 

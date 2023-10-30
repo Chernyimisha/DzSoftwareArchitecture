@@ -1,4 +1,4 @@
-package jsonExample;
+package DZ9.jsonExample;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

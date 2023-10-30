@@ -1,4 +1,4 @@
-package jsonExample;
+package DZ9.jsonExample;
 
 public class Book {
     private String title;

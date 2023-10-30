@@ -1,6 +1,6 @@
-package MVPVM.viewModel;
+package DZ8.MVPVM.viewModel;
 
-import MVPVM.model.Task;
+import DZ8.MVPVM.model.Task;
 
 public class TaskViewModel {
     private String displayName;

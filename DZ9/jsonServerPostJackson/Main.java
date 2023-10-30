@@ -1,4 +1,4 @@
-package jsonServerPostJackson;
+package DZ9.jsonServerPostJackson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpHandler;

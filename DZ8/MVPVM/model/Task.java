@@ -1,4 +1,4 @@
-package MVPVM.model;
+package DZ8.MVPVM.model;
 
 public class Task {
     private String name;

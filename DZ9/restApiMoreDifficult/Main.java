@@ -1,4 +1,4 @@
-package restApiMoreDifficult;
+package DZ9.restApiMoreDifficult;
 
 // Импортируем необходимые классы для работы с HTTP-сервером
 import com.sun.net.httpserver.HttpHandler;

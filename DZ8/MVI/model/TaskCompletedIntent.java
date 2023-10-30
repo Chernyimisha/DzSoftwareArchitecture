@@ -1,4 +1,4 @@
-package MVI.model;
+package DZ8.MVI.model;
 
 /**
  * TaskCompletedIntent - намерение отметить задачу как завершенную.

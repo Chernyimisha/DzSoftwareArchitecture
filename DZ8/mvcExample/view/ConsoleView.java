@@ -1,6 +1,6 @@
-package mvcExample.view;
+package DZ8.mvcExample.view;
 
-import mvcExample.controller.PrinterController;
+import DZ8.mvcExample.controller.PrinterController;
 
 import java.util.Scanner;
 

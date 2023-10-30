@@ -1,4 +1,4 @@
-package MVVM.model;
+package DZ8.MVVM.model;
 
 public class Book {
     private String title;

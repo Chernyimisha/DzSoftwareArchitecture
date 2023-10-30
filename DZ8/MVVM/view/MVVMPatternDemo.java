@@ -1,7 +1,7 @@
-package MVVM.view;
+package DZ8.MVVM.view;
 
-import MVVM.model.Book;
-import MVVM.viewModel.BooksViewModel;
+import DZ8.MVVM.model.Book;
+import DZ8.MVVM.viewModel.BooksViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
-package mvcExample;
+package DZ8.mvcExample;
 
-import mvcExample.controller.PrinterController;
-import mvcExample.model.PrinterUpperCase;
-import mvcExample.view.ConsoleView;
+import DZ8.mvcExample.controller.PrinterController;
+import DZ8.mvcExample.model.PrinterUpperCase;
+import DZ8.mvcExample.view.ConsoleView;
 
 public class Main {
     public static void main(String[] args) {

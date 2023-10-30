@@ -1,4 +1,4 @@
-package MVI.model;
+package DZ8.MVI.model;
 
 /**
  * Интерфейс ViewState представляет состояние представления.

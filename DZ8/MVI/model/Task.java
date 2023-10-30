@@ -1,4 +1,4 @@
-package MVI.model;
+package DZ8.MVI.model;
 
 /**
  * Task - базовая сущность, представляющая задачу.

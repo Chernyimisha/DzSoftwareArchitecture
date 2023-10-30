@@ -1,6 +1,6 @@
-package MVI.view;
+package DZ8.MVI.view;
 
-import MVI.model.ViewState;
+import DZ8.MVI.model.ViewState;
 
 /**
  * BaseView - базовый интерфейс для всех видов.

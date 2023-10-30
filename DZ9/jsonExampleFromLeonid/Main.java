@@ -1,4 +1,4 @@
-package jsonExampleFromLeonid;
+package DZ9.jsonExampleFromLeonid;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpExchange;

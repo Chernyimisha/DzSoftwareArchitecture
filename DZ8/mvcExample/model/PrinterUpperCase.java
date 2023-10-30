@@ -1,4 +1,4 @@
-package mvcExample.model;
+package DZ8.mvcExample.model;
 
 public class PrinterUpperCase {
     public void print(String str) {
