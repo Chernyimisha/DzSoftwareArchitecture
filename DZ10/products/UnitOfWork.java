@@ -1,19 +1,36 @@
 package DZ10.products;
 
+import java.util.Scanner;
+
+/**
+ * Компонент: UnitOfWork
+
+ * Описание: Класс UnitOfWork используя ProductService реализует метод transaction, обеспечивающий атомарность изменений
+ * данных о товарах в продаже и проданных товарах в результате их продажи. Так если факт продажи не подтверждается, то
+ * изменения не сохраняются, товар из списка товаров в продажи в список проданных товаров не перемещается.
+
+ */
+
 public class UnitOfWork {
 
-    Repository repository;
-    boolean saleStatus;
+    ProductService productService;
+    String saleStatus;
 
-    public UnitOfWork(Repository repository) {
-        this.repository = repository;
+    public UnitOfWork(ProductService productService) {
+        this.productService = productService;
     }
 
-    public void transaction(Product product, Boolean saleStatus){
+    public void transaction(Product product){
 
-        if (saleStatus = true){
-            repository.deleteProduct(product);
-            repository.addSoldProduct(product);
-        } else System.out.println("Транзакция отклонена");
+        Scanner sc = new Scanner(System.in);
+        System.out.printf("Подтвердите продажу %s (yes): ", product.getName());
+        String status = sc.nextLine();
+
+        if(status.equalsIgnoreCase("yes")){
+            productService.repository.deleteProduct(product);
+            productService.repository.addSoldProduct(product);
+            System.out.println("Транзакция проведена");
+        }
+        else System.out.println("Транзакция отклонена.");
     }
 }

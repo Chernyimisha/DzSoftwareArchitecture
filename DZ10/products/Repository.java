@@ -1,12 +1,23 @@
 package DZ10.products;
 
+/**
+ * Компонент: Repository
+
+ * Описание: Класс Repository использовать ProductDAO для доступа к данным. Репозиторий имеет методы для добавления,
+ * удаления и получения информации о продуктах. Он также содержит логику, связанную с продуктами. Например,
+ * метод добавления addProduct содержит условия для добавления данных о продукте - наименование и цена не должны быть пустым и равным нулю
+ * соответственно.
+ * Метод удаления deleteProduct содержит проверку удаляемого продукта на предмет наличия его в списке товаров.
+ * Методы вывода не печать списка товаров содержат проверку на пустоту списков и в случаях когда список пуст,
+ * соответствующий метод ProductDAO не вызывается.
+ * Таким образом, Repository анализирует поток, подаваемых на ProductDAO, данных на корректность.
+
+ */
+
 public class Repository implements ImpRepository {
 
-    ProductDAO productDAO;
+    ProductDAO productDAO = new ProductDAO();
 
-    public Repository(ProductDAO productDAO) {
-        this.productDAO = productDAO;
-    }
 
     @Override
     public void addProduct(Product product) {

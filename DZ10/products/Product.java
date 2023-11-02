@@ -1,5 +1,13 @@
 package DZ10.products;
 
+/**
+ * Компонент: Product
+
+ * Описание: Класс Product представляет собой продукт с атрибутами id, name и price.
+ * Содержит в себе конструктор, toString-метод и основные геттеры и сеттеры.
+
+ */
+
 public class Product {
 
     private int id;
