@@ -15,6 +15,11 @@ public class Repository implements ImpRepository {
     }
 
     @Override
+    public void addSoldProduct(Product product) {
+        productDAO.addSold(product);
+    }
+
+    @Override
     public void deleteProduct(Product product) {
         if(productDAO.products.contains(product))
         productDAO.delete(product);
@@ -22,8 +27,20 @@ public class Repository implements ImpRepository {
 
     @Override
     public void getAllProduct() {
-        if(!productDAO.products.isEmpty()) productDAO.getAll();
+        if(!productDAO.products.isEmpty()) {
+            System.out.println("Список товаров в продаже");
+            productDAO.getAll();
+        }
         else System.out.println("Список товаров пуст");
+    }
+
+    @Override
+    public void getSoldProduct() {
+        if(!productDAO.soldProducts.isEmpty()) {
+            System.out.println("Список проданных товаров");
+            productDAO.getSold();
+        }
+        else System.out.println("Список проданных товаров пуст");
     }
 
 
