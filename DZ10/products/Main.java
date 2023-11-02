@@ -3,8 +3,8 @@ package DZ10.products;
 public class Main {
     public static void main(String[] args) {
 
-        Product product1 = new Product("Iphone10", 80);
-        Product product2 = new Product("Xiaomi Redmi Note", 50);
+        Product product1 = new Product("Iphone10", 800);
+        Product product2 = new Product("Xiaomi Redmi Note", 500);
         Product product3 = new Product("Iphone14", 1000);
 
         ProductDAO productDAO = new ProductDAO();
@@ -19,8 +19,8 @@ public class Main {
 
         System.out.println();
 
-        repository.deleteProduct(product3);
-        repository.getAllProduct();
+//        repository.deleteProduct(product3);
+//        repository.getAllProduct();
 
         System.out.println();
 
